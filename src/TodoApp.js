@@ -1,5 +1,8 @@
 import React from 'react';
 
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
+
 import useTodoState from './hooks/useTodoState';
 
 import { initialTodos } from './data/initialTodos';
@@ -22,8 +25,8 @@ const TodoApp = () => {
       </AppBar>
       <Grid container justify='center' style={{ marginTop: '1rem' }}>
         <Grid item xs={11} md={8} lg={4}>
-          {/* TodoForm */}
-          {/* TodoList */}
+          <TodoForm addTodo={addTodo} />
+          <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} editTodo={editTodo} />
         </Grid>
       </Grid>
     </Paper>
