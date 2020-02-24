@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 
 import useToggleState from './hooks/useToggleState';
 import EditTodoForm from './EditTodoForm';
-import { TodoContext } from './context/todos.context';
+import { DispatchContext } from './context/todos.context';
 
 import { ListItem, Checkbox, ListItemText, ListItemSecondaryAction, IconButton } from '@material-ui/core';
 import { Delete as DeleteIcon, Edit as EditIcon } from '@material-ui/icons';
 
 const Todo = ({ id, task, completed }) => {
-  const { dispatch } = useContext(TodoContext);
+  const dispatch = useContext(DispatchContext);
 
   const [isEditing, toggle] = useToggleState(false);
 
